@@ -48,17 +48,13 @@ function updateCarousel() {
 </script>
 <template>
     <div>
-        <div class="mx-auto items" id="carousel">
-            <div class="item" :style="`background-image:url(${item.url})`" v-for="(item, index) in items" :key="index">
-                <p class="pl-12 pr-12 pt-80 text-white font-bold ">{{ item.title }}</p>
-            </div>
-        </div>
+
         <form>
             <div class="grid gap-6 mb-6 md:grid-cols-3">
                 <div>
-                    <input v-model="newItem.url" type="text" id="color-name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required placeholder="Image URL">
+                    <input v-model="newItem.url" type="text" id="color-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required
+                        placeholder="Image URL">
                 </div>
                 <div>
                     <input v-model="newItem.title" type="text" id="color-name"
@@ -73,6 +69,11 @@ function updateCarousel() {
                 </div>
             </div>
         </form>
+        <div class="mx-auto items" id="carousel">
+            <div class="item" :style="`background-image:url(${item.url})`" v-for="(item, index) in items" :key="index">
+                <p class="pl-12 pr-12 pt-80 text-white font-bold ">{{ item.title }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
